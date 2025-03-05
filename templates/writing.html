@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reading - HobbyMaker</title>
+    <title>Writing - HobbyMaker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,36 +13,16 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="painting.html">Painting</a></li>
-            <li><a href="reading.html">Reading</a></li>
             <li><a href="writing.html">Writing</a></li>
+            <li><a href="reading.html">Reading</a></li>
             <li><a href="games.html">Games</a></li>
-            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <h1>Recommended Books</h1>
-        <p>Expand your knowledge with these must-read books.</p>
-    </header>
+    <h1>Write Your Thoughts</h1>
+    <textarea id="textEditor" rows="10" cols="50"></textarea>
+    <button onclick="saveNote()">Save Note</button>
 
-    <section class="books">
-        <div class="book">
-            <h3>The Alchemist</h3>
-            <p>By Paulo Coelho</p>
-        </div>
-        <div class="book">
-            <h3>Atomic Habits</h3>
-            <p>By James Clear</p>
-        </div>
-        <div class="book">
-            <h3>Harry Potter Series</h3>
-            <p>By J.K. Rowling</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 HobbyMaker. All Rights Reserved.</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
