@@ -4,41 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HobbyMaker - Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to HobbyMaker</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a><!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>HobbyMaker - Home</title>
-                <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-            </head>
-            <body>
-                <header>
-                    <h1>Welcome to HobbyMaker</h1>
-                    <nav>
-                        <a href="/">Home</a>
-                        <a href="/about">About</a>
-                        <a href="/contact">Contact</a>
-                    </nav>
-                </header>
-                <main>
-                    <p>Find and share your favorite hobbies with others!</p>
-                </main>
-            </body>
-            </html>
-            
-        </nav>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">HobbyMaker</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Discover Your Next Hobby</h1>
+        <p>Explore, Learn, and Create with HobbyMaker!</p>
+        <a href="about.html" class="btn">Get Started</a>
     </header>
-    <main>
-        <p>Find and share your favorite hobbies with others!</p>
-    </main>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <img src="https://source.unsplash.com/300x200/?painting" alt="Painting">
+            <h3>Painting</h3>
+            <p>Express your creativity with beautiful artworks.</p>
+        </div>
+        <div class="feature-card">
+            <img src="https://source.unsplash.com/300x200/?coding" alt="Coding">
+            <h3>Coding</h3>
+            <p>Learn programming and build amazing projects.</p>
+        </div>
+        <div class="feature-card">
+            <img src="https://source.unsplash.com/300x200/?music" alt="Music">
+            <h3>Music</h3>
+            <p>Discover new sounds and instruments.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 HobbyMaker. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
