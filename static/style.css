@@ -1,16 +1,26 @@
-body {
-    font-family: Arial, sans-serif;
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Navigation Bar */
 .navbar {
-    background: #007bff;
-    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #007bff;
+    padding: 15px 50px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
 }
 
 .nav-links {
@@ -19,38 +29,132 @@ body {
 }
 
 .nav-links li {
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
-h1 {
-    color: #007bff;
-    margin: 20px 0;
+.nav-links a:hover {
+    color: yellow;
 }
 
-.paint-tools {
-    margin: 20px;
-}
-
-canvas {
-    border: 2px solid black;
-    display: block;
-    margin: 20px auto;
-}
-
-button {
-    background-color: #007bff;
+/* Hero Section with Animation */
+.hero {
+    text-align: center;
+    background: url('https://source.unsplash.com/1600x900/?hobby') no-repeat center center/cover;
     color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    margin: 5px;
+    padding: 150px 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
-button:hover {
-    background-color: #0056b3;
+.hero h1 {
+    font-size: 3rem;
+    animation: slideDown 1.5s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    animation: slideUp 1.5s ease-in-out;
+}
+
+.btn {
+    display: inline-block;
+    background: yellow;
+    color: #333;
+    padding: 12px 20px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    animation: bounce 2s infinite;
+}
+
+.btn:hover {
+    background: orange;
+}
+
+/* Hobbies Section with Hover Effects */
+.hobbies {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    background: #f4f4f4;
+}
+
+.hobby-card {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hobby-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.hobby-card:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hobbies {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
 }
