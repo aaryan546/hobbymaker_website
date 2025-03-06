@@ -19,8 +19,23 @@
         </ul>
     </nav>
 
-    <h1>Read Books</h1>
-    <iframe src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" width="80%" height="500px"></iframe>
+    <h1>Read Your Favorite Books</h1>
+
+    <label for="bookSelect">Choose a book:</label>
+    <select id="bookSelect" onchange="loadBook()">
+        <option value="dummy.pdf">Select a Book</option>
+        <option value="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf">Sample Book 1</option>
+        <option value="https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf">Sample Book 2</option>
+    </select>
+
+    <iframe id="bookViewer" src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" width="80%" height="500px"></iframe>
+
+    <script>
+        function loadBook() {
+            let selectedBook = document.getElementById("bookSelect").value;
+            document.getElementById("bookViewer").src = selectedBook;
+        }
+    </script>
 
 </body>
 </html>
