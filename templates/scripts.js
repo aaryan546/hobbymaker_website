@@ -1,33 +1,42 @@
-// Painting Canvas Setup
+// Select Canvas & Context
 const canvas = document.getElementById("paintCanvas");
 const ctx = canvas.getContext("2d");
+
+// Set Canvas Size
 canvas.width = window.innerWidth * 0.8;
 canvas.height = 500;
+canvas.style.border = "2px solid black";
 
 let painting = false;
 let paths = [];
 let currentPath = [];
 
+// Start Drawing
 function startPaint(e) {
     painting = true;
     ctx.beginPath();
 }
 
+// Stop Drawing
 function endPaint() {
     painting = false;
-    paths.push([...currentPath]);
+    paths.push([...currentPath]); // Save path for undo
     currentPath = [];
 }
 
+// Draw on Canvas
 function draw(e) {
     if (!painting) return;
     const x = e.clientX - canvas.offsetLeft;
     const y = e.clientY - canvas.offsetTop;
+    
     ctx.lineWidth = document.getElementById("brushSize").value;
     ctx.lineCap = "round";
     ctx.strokeStyle = document.getElementById("colorPicker").value;
+    
     ctx.lineTo(x, y);
     ctx.stroke();
+    
     ctx.beginPath();
     ctx.moveTo(x, y);
     currentPath.push({ x, y, color: ctx.strokeStyle, width: ctx.lineWidth });
